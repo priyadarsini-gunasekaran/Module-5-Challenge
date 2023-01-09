@@ -186,8 +186,25 @@ function getPrompt02() {
     
 // Function to prompt user for password options
 function getPasswordOptions() {
+  // prompt01 - Length of password (min 10 & max 64)
+  var passLength = getPrompt01();
 
-}
+  // prompt02 - charcter type: lowercase
+  var passLowerCase = getPrompt02();
+
+  // prompt03 - charcter type: uppercase
+  var passUpperCase = getPrompt03();
+
+  // prompt04 - charcter type: numeric
+  var passNumeric = getPrompt04();
+
+  // prompt05 - charcter type: special characters
+  var specialCharacters = getPrompt05();
+
+  const finalPassword = generatePassword(passLength, passLowerCase, passUpperCase, passNumeric, specialCharacters);
+  writePassword(finalPassword);
+  
+  }
 
 // Function for getting a random element from an array
 function getRandom(arr) {
