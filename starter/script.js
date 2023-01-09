@@ -87,7 +87,43 @@ var upperCasedCharacters = [
   'Y',
   'Z'
 ];
+// User defined functions to present a series of prompts for password criteria
+function getPrompt01() {
+  var passLength = 0;
+  for (var i = 0; i < 1; i++) {
+    var x = Number(prompt("How many characters will your password be? Enter a number between 10 and 64"));
+    if (x >= 10 && x <= 64){
+      passLength += x;
+      }
+    else{
+      alert("You have entered a wrong option. Lets try again");
+      i--;
+      continue;
+    }
+    //return console.log(passLength);
+    return passLength;
+  }
+}
 
+function getPrompt02() {
+  var passLowerCase = false;
+  for (var i = 0; i < 1; i++) {
+    var x = prompt("Do you wish to have lowercase in your password? Enter 'y' or 'n'");
+    if (x === 'y' || x === 'Y'){
+      passLowerCase = true;
+      } 
+    else if (x === 'n' || x === 'N'){
+      passLowerCase = false;
+    }
+    else{
+      alert("You have entered a wrong option. Lets try again");
+      i--;
+      continue;
+    }
+       //return console.log(passLowerCase);
+       return passLowerCase;
+      }
+    }
 // Function to prompt user for password options
 function getPasswordOptions() {
 
