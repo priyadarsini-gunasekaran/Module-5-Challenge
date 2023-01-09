@@ -162,6 +162,26 @@ function getPrompt02() {
         return passNumeric;
       }
     }
+    function getPrompt05() {
+      var passSpecialChar = false;
+      for (var i = 0; i < 1; i++) {
+        var x = prompt("Do you wish to have special characters in your password? Enter 'y' or 'n'");
+        if (x === 'y' || x === 'Y'){
+          passSpecialChar = true;
+          }
+        else if (x === 'n' || x === 'N'){
+          passSpecialChar = false;
+          }
+        else{
+          alert("You have entered a wrong option. Lets try again");
+          i--;
+          continue;
+        }
+        //return console.log(passSpecialChar);
+        return passSpecialChar;
+      }
+    }
+      
     
     
 // Function to prompt user for password options
