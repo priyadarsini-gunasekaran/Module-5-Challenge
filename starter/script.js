@@ -124,6 +124,26 @@ function getPrompt02() {
        return passLowerCase;
       }
     }
+    function getPrompt03() {
+      var passUpperCase = false;
+      for (var i = 0; i < 1; i++) {
+        var x = prompt("Do you wish to have uppercase in your password? Enter 'y' or 'n'");
+        if (x === 'y' || x === 'Y'){
+          passUpperCase = true;
+          }
+        else if (x === 'n' || x === 'N'){
+          passUpperCase = false;
+          }
+        else{
+          alert("You have entered a wrong option. Lets try again");
+          i--;
+          continue;
+        }
+        //return console.log(passUpperCase);
+        return passUpperCase;
+      }
+    }
+    
 // Function to prompt user for password options
 function getPasswordOptions() {
 
