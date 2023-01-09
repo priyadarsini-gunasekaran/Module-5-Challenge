@@ -234,17 +234,16 @@ function generatePassword(passLength, passLowerCase, passUpperCase, passNumeric,
   return finalPassword;
 
 }
-
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
+function writePassword(x) {
+  //var password = generatePassword();
+  var password = x;
   var passwordText = document.querySelector('#password');
-
   passwordText.value = password;
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener('click', writePassword);
+generateBtn.addEventListener('click', getPasswordOptions);
