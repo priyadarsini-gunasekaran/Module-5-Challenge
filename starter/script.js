@@ -87,7 +87,10 @@ var upperCasedCharacters = [
   'Y',
   'Z'
 ];
+
 // User defined functions to present a series of prompts for password criteria
+
+// prompt01 function - Get length of password (min 10 & max 64)
 function getPrompt01() {
   var passLength = 0;
   for (var i = 0; i < 1; i++) {
@@ -105,6 +108,7 @@ function getPrompt01() {
   }
 }
 
+// prompt02 function - Get character type: lowercase
 function getPrompt02() {
   var passLowerCase = false;
   for (var i = 0; i < 1; i++) {
@@ -124,86 +128,81 @@ function getPrompt02() {
        return passLowerCase;
       }
     }
-    function getPrompt03() {
-      var passUpperCase = false;
-      for (var i = 0; i < 1; i++) {
-        var x = prompt("Do you wish to have uppercase in your password? Enter 'y' or 'n'");
-        if (x === 'y' || x === 'Y'){
-          passUpperCase = true;
-          }
-        else if (x === 'n' || x === 'N'){
-          passUpperCase = false;
-          }
-        else{
-          alert("You have entered a wrong option. Lets try again");
-          i--;
-          continue;
-        }
-        //return console.log(passUpperCase);
-        return passUpperCase;
+
+// prompt03 function - Get character type: uppercase
+function getPrompt03() {
+  var passUpperCase = false;
+  for (var i = 0; i < 1; i++) {
+    var x = prompt("Do you wish to have uppercase in your password? Enter 'y' or 'n'");
+    if (x === 'y' || x === 'Y'){
+      passUpperCase = true;
       }
-    }
-    function getPrompt04() {
-      var passNumeric = false;
-      for (var i = 0; i < 1; i++) {
-        var x = prompt("Do you wish to have numeric values in your password? Enter 'y' or 'n'");
-        if (x === 'y' || x === 'Y'){
-          passNumeric = true;
-          }
-        else if (x === 'n' || x === 'N'){
-          passNumeric = false;
-          }
-        else{
-          alert("You have entered a wrong option. Lets try again");
-          i--;
-          continue;
-        }
-        //return console.log(passNumeric);
-        return passNumeric;
+    else if (x === 'n' || x === 'N'){
+      passUpperCase = false;
       }
+    else{
+      alert("You have entered a wrong option. Lets try again");
+      i--;
+      continue;
     }
-    function getPrompt05() {
-      var passSpecialChar = false;
-      for (var i = 0; i < 1; i++) {
-        var x = prompt("Do you wish to have special characters in your password? Enter 'y' or 'n'");
-        if (x === 'y' || x === 'Y'){
-          passSpecialChar = true;
-          }
-        else if (x === 'n' || x === 'N'){
-          passSpecialChar = false;
-          }
-        else{
-          alert("You have entered a wrong option. Lets try again");
-          i--;
-          continue;
-        }
-        //return console.log(passSpecialChar);
-        return passSpecialChar;
+    //return console.log(passUpperCase);
+    return passUpperCase;
+  }
+}
+ 
+// prompt04 function - Get character type: numeric
+function getPrompt04() {
+  var passNumeric = false;
+  for (var i = 0; i < 1; i++) {
+    var x = prompt("Do you wish to have numeric values in your password? Enter 'y' or 'n'");
+    if (x === 'y' || x === 'Y'){
+      passNumeric = true;
       }
+    else if (x === 'n' || x === 'N'){
+      passNumeric = false;
+      }
+    else{
+      alert("You have entered a wrong option. Lets try again");
+      i--;
+      continue;
     }
+    //return console.log(passNumeric);
+    return passNumeric;
+  }
+}
+
+// prompt05 function - Get character type: special characters
+function getPrompt05() {
+  var passSpecialChar = false;
+  for (var i = 0; i < 1; i++) {
+    var x = prompt("Do you wish to have special characters in your password? Enter 'y' or 'n'");
+    if (x === 'y' || x === 'Y'){
+      passSpecialChar = true;
+      }
+    else if (x === 'n' || x === 'N'){
+      passSpecialChar = false;
+      }
+    else{
+      alert("You have entered a wrong option. Lets try again");
+      i--;
+      continue;
+    }
+    //return console.log(passSpecialChar);
+    return passSpecialChar;
+  }
+}
       
     
     
 // Function to prompt user for password options
 function getPasswordOptions() {
-  // prompt01 - Length of password (min 10 & max 64)
   var passLength = getPrompt01();
-
-  // prompt02 - charcter type: lowercase
   var passLowerCase = getPrompt02();
-
-  // prompt03 - charcter type: uppercase
   var passUpperCase = getPrompt03();
-
-  // prompt04 - charcter type: numeric
   var passNumeric = getPrompt04();
-
-  // prompt05 - charcter type: special characters
   var specialCharacters = getPrompt05();
-
   const finalPassword = generatePassword(passLength, passLowerCase, passUpperCase, passNumeric, specialCharacters);
   writePassword(finalPassword);
-  
   }
 
 // Function for getting a random element from an array
@@ -234,6 +233,7 @@ function generatePassword(passLength, passLowerCase, passUpperCase, passNumeric,
   return finalPassword;
 
 }
+
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
 
