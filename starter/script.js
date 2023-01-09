@@ -90,7 +90,8 @@ var upperCasedCharacters = [
 
 // User defined functions to present a series of prompts for password criteria
 
-// prompt01 function - Get length of password (min 10 & max 64)
+// AC02: prompt01 function - Get length of password (min 10 & max 64)
+
 function getPrompt01() {
   var passLength = 0;
   for (var i = 0; i < 1; i++) {
@@ -108,7 +109,7 @@ function getPrompt01() {
   }
 }
 
-// prompt02 function - Get character type: lowercase
+// AC03: prompt02 function - Get character type: lowercase
 function getPrompt02() {
   var passLowerCase = false;
   for (var i = 0; i < 1; i++) {
@@ -129,7 +130,7 @@ function getPrompt02() {
       }
     }
 
-// prompt03 function - Get character type: uppercase
+// AC04: prompt03 function - Get character type: uppercase
 function getPrompt03() {
   var passUpperCase = false;
   for (var i = 0; i < 1; i++) {
@@ -150,7 +151,7 @@ function getPrompt03() {
   }
 }
  
-// prompt04 function - Get character type: numeric
+// AC05: prompt04 function - Get character type: numeric
 function getPrompt04() {
   var passNumeric = false;
   for (var i = 0; i < 1; i++) {
@@ -171,7 +172,7 @@ function getPrompt04() {
   }
 }
 
-// prompt05 function - Get character type: special characters
+// AC06: prompt05 function - Get character type: special characters
 function getPrompt05() {
   var passSpecialChar = false;
   for (var i = 0; i < 1; i++) {
@@ -213,6 +214,8 @@ function getRandom(arr) {
 // Function to generate password with user input
 function generatePassword(passLength, passLowerCase, passUpperCase, passNumeric, passSpecialChar) {
   let generatedPassword = "";
+  
+  // AC08: Once prompts are answered then the password should be generated
   for (let i = 0; i < passLength; i++) {
     if(passLowerCase){
       generatedPassword += getRandom(lowerCasedCharacters);
@@ -246,4 +249,5 @@ function writePassword(x) {
 }
 
 // Add event listener to generate button
+// AC01: Generate a password when the button is clicked
 generateBtn.addEventListener('click', getPasswordOptions);
