@@ -211,9 +211,27 @@ function getRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-
 // Function to generate password with user input
-function generatePassword() {
+function generatePassword(passLength, passLowerCase, passUpperCase, passNumeric, passSpecialChar) {
+  let generatedPassword = "";
+  for (let i = 0; i < passLength; i++) {
+    if(passLowerCase){
+      generatedPassword += getRandom(lowerCasedCharacters);
+    }
+    if (passUpperCase){
+      generatedPassword += getRandom(upperCasedCharacters);
+    }
+    if (passNumeric){
+      generatedPassword += getRandom(numericCharacters);
+    }
+    if(passSpecialChar){
+      generatedPassword += getRandom(specialCharacters);
+    }
+
+  }
+
+  const finalPassword = generatedPassword.slice(0, passLength);
+  return finalPassword;
 
 }
 
