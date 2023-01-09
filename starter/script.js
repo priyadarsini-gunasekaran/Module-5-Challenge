@@ -143,6 +143,26 @@ function getPrompt02() {
         return passUpperCase;
       }
     }
+    function getPrompt04() {
+      var passNumeric = false;
+      for (var i = 0; i < 1; i++) {
+        var x = prompt("Do you wish to have numeric values in your password? Enter 'y' or 'n'");
+        if (x === 'y' || x === 'Y'){
+          passNumeric = true;
+          }
+        else if (x === 'n' || x === 'N'){
+          passNumeric = false;
+          }
+        else{
+          alert("You have entered a wrong option. Lets try again");
+          i--;
+          continue;
+        }
+        //return console.log(passNumeric);
+        return passNumeric;
+      }
+    }
+    
     
 // Function to prompt user for password options
 function getPasswordOptions() {
